@@ -114,7 +114,7 @@ export default function SettingsModal({ isOpen, onClose }) {
             {/* API Endpoint */}
             <div>
               <label className="flex items-center gap-2 text-sm font-bold text-slate-400 mb-3 ml-1">
-                <Link2 size={16} /> API Endpoint
+                <Link2 size={16} /> Cổng kết nối API
               </label>
               <input
                 type="text"
@@ -128,7 +128,7 @@ export default function SettingsModal({ isOpen, onClose }) {
             <div>
               <div className="flex items-center justify-between mb-3 ml-1">
                 <label className="flex items-center gap-2 text-sm font-bold text-slate-400">
-                  <ShieldCheck size={16} /> Danh sách API Keys
+                  <ShieldCheck size={16} /> Danh sách mã khóa API
                 </label>
                 <button onClick={() => addField('apiKeys')} className="p-1.5 rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all">
                   <Plus size={16} />
@@ -158,7 +158,7 @@ export default function SettingsModal({ isOpen, onClose }) {
             <div>
               <div className="flex items-center justify-between mb-3 ml-1">
                 <label className="flex items-center gap-2 text-sm font-bold text-slate-400">
-                  <Cpu size={16} /> Danh sách AI Models
+                  <Cpu size={16} /> Mô hình trí tuệ nhân tạo
                 </label>
                 <button onClick={() => addField('models')} className="p-1.5 rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all">
                   <Plus size={16} />

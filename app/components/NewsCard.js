@@ -68,7 +68,7 @@ export default function NewsCard({ article, onClick, isSelected, onSelect, hasSu
               className="px-2 py-1 md:p-2 rounded-lg md:rounded-xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/40 flex items-center gap-1.5 md:gap-2"
             >
               <Sparkles size={12} className="animate-pulse hidden xs:block" />
-              <span className="text-[8px] md:text-[10px] font-black uppercase tracking-tighter">AI Ready</span>
+              <span className="text-[8px] md:text-[10px] font-black uppercase tracking-tighter">Đã tóm tắt</span>
             </motion.div>
           </div>
         )}

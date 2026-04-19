@@ -709,10 +709,9 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Footer */}
               <div className="p-8 border-t border-white/5 text-center bg-white/[0.01]">
                 <p className="text-slate-600 text-xs font-bold uppercase tracking-widest">
-                  Đã tải {selectedIds.length} bài báo • AI Magazine Mode
+                  Đã tải {selectedIds.length} bài báo • Chế độ Tạp chí AI
                 </p>
               </div>
             </div>
@@ -721,7 +720,7 @@ export default function Home() {
       </AnimatePresence>
 
       <footer className="mt-20 py-12 border-t border-white/5 text-center text-slate-500 text-sm">
-        <p>© 2026 Tin Tức Mới • AI-Powered News Aggregator</p>
+        <p>© 2026 Tin Tức Mới • Trình tổng hợp tin tức thông minh AI</p>
       </footer>
 
       {/* Audio Engine for Batch */}
