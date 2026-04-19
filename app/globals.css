@@ -124,13 +124,13 @@ img {
   gap: 8px;
 }
 
-/* Elderly Mode Adjustments - HIGH CONTRAST LIGHT THEME */
+/* Elderly Mode Adjustments - EYE-CARE SEPIA THEME */
 .elderly-mode {
   font-size: 1.25rem;
-  --background: #ffffff !important;
-  --foreground: #000000 !important;
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  --background: #f7f3eb !important; /* Soft cream/paper color */
+  --foreground: #1a1a1a !important;
+  background-color: #f7f3eb !important;
+  color: #1a1a1a !important;
 }
 
 .elderly-mode h1, 
@@ -143,7 +143,7 @@ img {
 .elderly-mode p { 
   font-size: 1.5rem !important; 
   line-height: 1.8 !important; 
-  color: #1a1a1a !important; 
+  color: #2d2d2d !important; 
   font-weight: 600 !important;
 }
 
@@ -157,44 +157,60 @@ img {
   font-weight: 900 !important;
   font-size: 1.2rem !important;
   border-width: 3px !important;
+  background-color: #ffffff !important;
+  border-color: #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+
+.elderly-mode .bg-indigo-600 {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+  border-color: #4f46e5 !important;
 }
 
 /* Light theme for cards in elderly mode */
 .elderly-mode .glass {
   background: #ffffff !important;
-  border: 3px solid #000000 !important;
-  color: #000000 !important;
+  border: 3px solid #1a1a1a !important;
+  color: #1a1a1a !important;
   backdrop-filter: none !important;
+  box-shadow: 0 10px 0 #e5e0d5 !important; /* retro shadow */
 }
 
 .elderly-mode .card-hover {
-  background: #f8fafc !important;
-  border: 3px solid #e2e8f0 !important;
+  background: #ffffff !important;
+  border: 3px solid #1a1a1a !important;
 }
 
 .elderly-mode .card-hover:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: #6366f1 !important;
-  background: #ffffff !important;
+  transform: translateY(-4px);
+  border-color: #4f46e5 !important;
+  box-shadow: 0 15px 0 #4f46e522 !important;
 }
 
 .elderly-mode .text-slate-400,
 .elderly-mode .text-slate-500,
 .elderly-mode .text-slate-300 {
-  color: #334155 !important;
-  font-weight: 700 !important;
+  color: #4a4a4a !important;
+  font-weight: 800 !important;
 }
 
 .elderly-mode .bg-white\/5,
 .elderly-mode .bg-white\/10 {
-  background-color: #f1f5f9 !important;
-  border-color: #cbd5e1 !important;
+  background-color: #efede7 !important;
+  border-color: #d1cfc9 !important;
 }
 
 .elderly-mode .bg-black,
 .elderly-mode .bg-black\/95,
-.elderly-mode .bg-[#0a0a0b] {
-  background-color: #ffffff !important;
+.elderly-mode .bg-[#0a0a0b],
+.elderly-mode .bg-[#0f0f11] {
+  background-color: #f7f3eb !important;
+}
+
+.elderly-mode header {
+  background-color: #f7f3ebcc !important;
+  border-bottom: 3px solid #1a1a1a !important;
 }
 
 @media (max-width: 768px) {
