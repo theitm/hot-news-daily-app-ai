@@ -11,22 +11,23 @@
 ## ✨ Tính năng nổi bật
 
 ### 🧠 Trí Tuệ Nhân Tạo (AI) Đỉnh Cao
-- **Tóm tắt thông minh**: Sử dụng các mô hình AI tiên tiến (OpenAI, Gemini, Claude) để chắt lọc nội dung cốt lõi của bài báo chỉ trong vài giây.
-- **Xử lý hàng loạt (Batch Processing)**: Chọn nhiều bài báo cùng lúc và để AI tóm tắt toàn bộ chỉ với 1 cú click.
-- **Xoay tua API (Key Rotation)**: Hỗ trợ thêm nhiều API Key và Model để tự động xoay tua, tránh giới hạn tốc độ (Rate Limit).
+- **Tóm tắt thông minh**: Sử dụng các mô hình AI tiên tiến để chắt lọc nội dung cốt lõi của bài báo chỉ trong vài giây.
+- **Xử lý hàng loạt**: Chọn nhiều bài báo cùng lúc và để AI tóm tắt toàn bộ chỉ với 1 cú click.
+- **Xoay tua API**: Hỗ trợ nhiều API Key và Model để tự động xoay tua, tối ưu hóa tốc độ xử lý.
+
+### 👴 Chế Độ Người Lớn Tuổi (Senior Mode)
+- **Giao diện "Êm mắt"**: Tông màu Sepia (kem ấm) dịu nhẹ giúp giảm mỏi mắt và hạn chế ánh sáng xanh.
+- **Cỡ chữ cực đại**: Font chữ được tinh chỉnh to, rõ ràng, dễ đọc cho người có thị lực kém.
+- **Nút bấm Thumb-friendly**: Các vùng tương tác lớn, dễ chạm trên cả điện thoại và máy tính bảng (iPad).
 
 ### 📖 Trải Nghiệm Đọc Độc Đáo
-- **AI Magazine Mode**: Chế độ "Tạp chí AI" trình bày tất cả các bản tóm tắt đã chọn trong một giao diện sang trọng, tối giản, tập trung hoàn toàn vào nội dung.
-- **Hệ thống Cache vĩnh viễn**: Tự động lưu trữ các bản tóm tắt vào bộ nhớ máy khách (LocalStorage), giúp bạn xem lại tức thì mà không tốn thêm chi phí API.
-- **AI Ready Indicator**: Biểu tượng lấp lánh báo hiệu bài báo đã có sẵn bản tóm tắt trong bộ nhớ.
+- **Chế độ Tạp chí AI**: Trình bày tất cả bản tóm tắt trong một giao diện sang trọng, tập trung hoàn toàn vào nội dung.
+- **Việt hóa 100%**: Giao diện thuần Việt hoàn toàn, loại bỏ mọi rào cản ngôn ngữ kỹ thuật.
+- **Hệ thống Cache**: Tự động lưu bản tóm tắt vào bộ nhớ máy, xem lại tức thì không tốn phí API.
 
 ### 🎧 Bản Tin Âm Thanh (TTS)
-- **Nghe bản tin tóm tắt**: Chuyển đổi văn bản tóm tắt thành giọng nói tự nhiên, chất lượng cao.
-- **Bản tin tổng hợp**: Tự động nối ghép các tin tức đã chọn thành một bản tin radio duy nhất để nghe khi đang làm việc hoặc lái xe.
-
-### 📱 Thiết Kế Hiện Đại & Mobile First
-- **Giao diện Glassmorphism**: Thiết kế kính mờ sang trọng với các hiệu ứng chuyển động mượt mà bằng Framer Motion.
-- **Tối ưu di động**: Trải nghiệm đọc tràn viền, thumb-friendly trên các thiết bị cảm ứng.
+- **Nghe tóm tắt**: Chuyển đổi văn bản thành giọng nói tự nhiên chất lượng cao.
+- **Bản tin radio**: Tự động ghép nối các tin đã chọn thành một bản tin radio tổng hợp duy nhất.
 
 ---
 
@@ -36,8 +37,7 @@
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **API Handling**: Axios
-- **AI Integration**: OpenAI SDK / Custom API Proxies
+- **Xử lý API**: Axios & Edge Runtime
 - **Deployment**: [Vercel](https://vercel.com/)
 
 ---
@@ -59,16 +59,15 @@ npm install
 ```bash
 npm run dev
 ```
-Mở [http://localhost:3000](http://localhost:3000) trên trình duyệt của bạn.
 
 ---
 
 ## ⚙️ Cấu hình API
 
-Bạn có thể cấu hình AI ngay trong ứng dụng thông qua biểu tượng **Settings (Răng cưa)**:
-1. Nhập danh sách API Key (mỗi key một dòng).
-2. Chọn/Nhập các Model muốn sử dụng (ví dụ: `gpt-4o-mini`, `gemini-1.5-flash`).
-3. Ứng dụng sẽ tự động xoay tua giữa các Key và Model này để tối ưu hiệu suất.
+Bạn có thể cấu hình AI ngay trong ứng dụng thông qua biểu tượng **Cài đặt (Răng cưa)**:
+1. Nhập danh sách API Key.
+2. Chọn/Nhập các Model muốn sử dụng.
+3. Ứng dụng sẽ tự động điều phối để đạt hiệu suất cao nhất.
 
 ---
 
