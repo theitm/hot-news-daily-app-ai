@@ -274,49 +274,42 @@ export default function Home() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/10 blur-[120px]" />
       </div>
 
-      {/* Header */}
-      <header className="sticky top-0 z-40 glass border-b border-white/5 py-4 px-6 md:px-12">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-6">
-          <div className="flex items-center gap-3 shrink-0">
-            <motion.div 
-              whileHover={{ rotate: 5, scale: 1.05 }}
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20"
-            >
-              <Newspaper size={22} />
-            </motion.div>
-            <h1 className="text-xl font-bold tracking-tight hidden sm:block">
-              <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent font-heading">
-                TIN TỨC MỚI
-              </span>
+      <header className="sticky top-0 z-50 bg-[#0a0a0b]/80 backdrop-blur-xl border-b border-white/5 py-3 md:py-6">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-12 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+              <Newspaper size={18} className="md:hidden" />
+              <Newspaper size={28} className="hidden md:block" />
+            </div>
+            <h1 className="text-lg md:text-2xl font-black text-white tracking-tighter">
+              TIN TỨC <span className="text-indigo-500">MỚI</span>
             </h1>
           </div>
-
-          <div className="relative flex-grow max-w-xl group">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-400 transition-colors" size={18} />
-            <input
-              type="text"
-              placeholder="Khám phá thế giới qua tin tức..."
+          
+          <div className="relative flex-grow max-w-xl hidden sm:block">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
+            <input 
+              type="text" 
+              placeholder="Tìm kiếm tin tức..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-2xl py-2.5 pl-12 pr-4 text-sm focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 focus:ring-4 focus:ring-indigo-500/5 transition-all"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl py-2.5 pl-12 pr-4 text-sm focus:outline-none focus:border-indigo-500/50 focus:bg-white/10 transition-all"
             />
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             <button 
               onClick={() => setIsSettingsOpen(true)}
-              className="p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-slate-300"
-              title="Cấu hình AI"
+              className="p-2 md:p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300"
             >
-              <Settings size={20} />
+              <Settings size={18} />
             </button>
             <button 
               onClick={fetchNews}
               disabled={refreshing}
-              className="p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-slate-300 active:scale-95"
-              title="Cập nhật tin mới"
+              className="p-2 md:p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300"
             >
-              <RefreshCw size={20} className={refreshing ? 'animate-spin' : ''} />
+              <RefreshCw size={18} className={refreshing ? 'animate-spin' : ''} />
             </button>
           </div>
         </div>
@@ -443,62 +436,54 @@ export default function Home() {
       <AnimatePresence>
         {selectedIds.length > 0 && (
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            exit={{ y: 100 }}
+            className="fixed bottom-6 left-0 right-0 z-[100] px-4 md:px-6 pointer-events-none"
           >
-            <div className="bg-indigo-600/10 backdrop-blur-2xl border border-indigo-500/30 rounded-[2.5rem] p-4 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-              <div className="flex items-center gap-4 ml-4">
-                <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-black">
-                  {selectedIds.length}
+            <div className="max-w-xl mx-auto pointer-events-auto">
+              <div className="glass rounded-[2rem] p-3 md:p-4 flex items-center justify-between gap-4 shadow-2xl border border-white/10 ring-1 ring-white/5">
+                <div className="flex items-center gap-2 md:gap-4 pl-2">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-indigo-600/20 shrink-0 text-sm md:text-base">
+                    {selectedIds.length}
+                  </div>
+                  <div className="hidden xs:block">
+                    <p className="text-white font-black text-[10px] md:text-xs uppercase tracking-widest">Đã chọn</p>
+                    <p className="text-slate-500 text-[10px] font-bold uppercase truncate max-w-[80px] md:max-w-none">bài viết</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold text-sm">Đang chọn {selectedIds.length} bài</p>
-                  <p className="text-indigo-300/70 text-[10px] uppercase tracking-widest font-black">Chế độ rảnh tay</p>
+
+                <div className="flex items-center gap-2 md:gap-3">
+                  <button
+                    onClick={() => setIsBatchSummaryOpen(true)}
+                    className="flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-xl bg-indigo-600 text-white font-black text-[10px] md:text-xs uppercase tracking-wider hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-600/20"
+                  >
+                    <Layout size={16} />
+                    <span className="hidden xs:inline">Mở Tạp chí</span>
+                    <span className="xs:hidden">Tạp chí</span>
+                  </button>
+                  
+                  <button
+                    onClick={handleBatchTTS}
+                    disabled={isBatchSummarizing}
+                    className={`p-2.5 md:p-3 rounded-xl transition-all border ${
+                      isBatchSummarizing 
+                      ? 'bg-white/5 border-white/5 text-slate-600' 
+                      : batchAudioUrl 
+                      ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/20' 
+                      : 'bg-white/10 border-white/5 text-white hover:bg-white/20'
+                    }`}
+                  >
+                    {isBatchSummarizing ? <Loader2 className="animate-spin" size={18} /> : isBatchPlaying ? <Pause size={18} /> : <Volume2 size={18} />}
+                  </button>
+
+                  <button
+                    onClick={() => setSelectedIds([])}
+                    className="p-2.5 md:p-3 rounded-xl bg-white/5 text-slate-500 hover:bg-red-500/20 hover:text-red-400 transition-all border border-white/5"
+                  >
+                    <Trash size={18} />
+                  </button>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={handleBatchSummarize}
-                  disabled={isBatchSummarizing}
-                  className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all disabled:opacity-50 shadow-lg shadow-indigo-600/20"
-                >
-                  {isBatchSummarizing ? <Loader2 className="animate-spin" size={16} /> : <Sparkles size={16} />}
-                  Tóm tắt hàng loạt
-                </button>
-                
-                <button
-                  onClick={() => setIsBatchSummaryOpen(true)}
-                  className="p-3 rounded-2xl bg-white/10 text-white hover:bg-white/20 transition-all border border-white/5"
-                  title="Xem toàn bộ tóm tắt"
-                >
-                  <Layout size={20} />
-                </button>
-
-                <button
-                  onClick={handleBatchTTS}
-                  disabled={isBatchSummarizing}
-                  className={`p-3 rounded-2xl transition-all border ${
-                    isBatchSummarizing 
-                    ? 'bg-white/5 border-white/5 text-slate-600' 
-                    : batchAudioUrl 
-                    ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/20' 
-                    : 'bg-white/10 border-white/5 text-white hover:bg-white/20'
-                  }`}
-                  title="Nghe bản tin tổng hợp"
-                >
-                  {isBatchSummarizing ? <Loader2 className="animate-spin" size={20} /> : isBatchPlaying ? <Pause size={20} /> : <Volume2 size={20} />}
-                </button>
-
-                <button
-                  onClick={() => setSelectedIds([])}
-                  className="p-3 rounded-2xl bg-white/5 text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-all border border-white/5"
-                  title="Hủy chọn"
-                >
-                  <Trash size={20} />
-                </button>
               </div>
             </div>
           </motion.div>
@@ -612,38 +597,35 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[1100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-3xl"
+            className="fixed inset-0 z-[1100] flex items-center justify-center p-0 md:p-4 bg-black/95 backdrop-blur-3xl"
           >
-            <div className="relative w-full max-w-5xl bg-[#0a0a0c] rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col h-[90vh]">
+            <div className="relative w-full h-full md:max-w-6xl md:h-[90vh] bg-[#0a0a0b] md:rounded-[3rem] border-0 md:border md:border-white/10 shadow-2xl overflow-hidden flex flex-col">
               {/* Header */}
-              <div className="p-10 border-b border-white/5 flex items-center justify-between">
-                <div>
-                  <h2 className="text-3xl font-black text-white tracking-tight flex items-center gap-3">
-                    <Layout className="text-indigo-400" size={32} /> Tạp chí Tin tức AI
-                  </h2>
-                  <p className="text-slate-500 mt-2 font-medium">Tổng hợp toàn bộ nội dung tóm tắt từ các bài báo bạn đã chọn</p>
-                </div>
+              <div className="p-6 md:p-10 border-b border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white/[0.02]">
                 <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-2xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/20">
+                    <Layout size={24} />
+                  </div>
+                  <div>
+                    <h2 className="text-xl md:text-2xl font-black text-white leading-tight uppercase tracking-tight">Tạp chí Tin tức AI</h2>
+                    <p className="text-slate-500 text-[10px] md:text-xs mt-1 font-bold uppercase tracking-widest">Tổng hợp toàn bộ nội dung từ các bài báo đã chọn</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
                   <button
                     onClick={handleBatchTTS}
-                    className={`flex items-center gap-3 px-8 py-3.5 rounded-2xl font-bold transition-all border ${
+                    className={`flex-grow md:flex-initial flex items-center justify-center gap-3 px-6 md:px-8 py-3 rounded-xl md:rounded-2xl font-bold transition-all border text-sm md:text-base ${
                       isBatchPlaying ? 'bg-red-500 border-red-400 text-white shadow-lg shadow-red-500/20' : 
                       batchAudioUrl ? 'bg-green-600 border-green-500 text-white shadow-lg shadow-green-500/20' : 
                       'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-600/20 hover:bg-indigo-500'
                     }`}
                   >
-                    {isBatchPlaying ? <Pause size={20} /> : <Volume2 size={20} />}
-                    {isBatchPlaying ? 'Dừng phát' : batchAudioUrl ? 'Phát bản tin tổng hợp' : 'Tạo bản tin âm thanh'}
+                    {isBatchPlaying ? <Pause size={18} /> : <Volume2 size={18} />}
+                    <span>{isBatchPlaying ? 'Dừng' : batchAudioUrl ? 'Nghe ngay' : 'Tạo âm thanh'}</span>
                   </button>
                   <button 
                     onClick={() => setIsBatchSummaryOpen(false)}
-                    className="p-4 rounded-2xl bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white transition-all"
-                  >
-                    <X size={24} />
-                  </button>
-                </div>
-              </div>
-
               {/* Grid Content */}
               <div className="flex-grow overflow-y-auto p-10 custom-scrollbar">
                 <div className="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
