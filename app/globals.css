@@ -124,43 +124,81 @@ img {
   gap: 8px;
 }
 
-/* Elderly Mode Adjustments */
+/* Elderly Mode Adjustments - HIGH CONTRAST LIGHT THEME */
 .elderly-mode {
-  font-size: 1.25rem; /* Base font size increase */
+  font-size: 1.25rem;
+  --background: #ffffff !important;
+  --foreground: #000000 !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
-.elderly-mode h1 { font-size: 3rem !important; }
-.elderly-mode h2 { font-size: 2.5rem !important; }
-.elderly-mode h3 { font-size: 2rem !important; }
-.elderly-mode p { font-size: 1.4rem !important; line-height: 1.8 !important; color: #ffffff !important; }
+.elderly-mode h1, 
+.elderly-mode h2, 
+.elderly-mode h3 { 
+  color: #000000 !important; 
+  font-weight: 900 !important;
+}
+
+.elderly-mode p { 
+  font-size: 1.5rem !important; 
+  line-height: 1.8 !important; 
+  color: #1a1a1a !important; 
+  font-weight: 600 !important;
+}
 
 .elderly-mode button, 
 .elderly-mode a,
 .elderly-mode select,
 .elderly-mode input {
-  min-height: 64px !important; /* Larger touch targets */
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-  font-weight: 800 !important;
+  min-height: 72px !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  font-weight: 900 !important;
+  font-size: 1.2rem !important;
+  border-width: 3px !important;
 }
 
+/* Light theme for cards in elderly mode */
 .elderly-mode .glass {
-  background: rgba(0, 0, 0, 0.9) !important;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  color: #000000 !important;
+  backdrop-filter: none !important;
+}
+
+.elderly-mode .card-hover {
+  background: #f8fafc !important;
+  border: 3px solid #e2e8f0 !important;
 }
 
 .elderly-mode .card-hover:hover {
   transform: translateY(-4px) scale(1.02);
   border-color: #6366f1 !important;
-  border-width: 3px !important;
+  background: #ffffff !important;
+}
+
+.elderly-mode .text-slate-400,
+.elderly-mode .text-slate-500,
+.elderly-mode .text-slate-300 {
+  color: #334155 !important;
+  font-weight: 700 !important;
+}
+
+.elderly-mode .bg-white\/5,
+.elderly-mode .bg-white\/10 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.elderly-mode .bg-black,
+.elderly-mode .bg-black\/95,
+.elderly-mode .bg-[#0a0a0b] {
+  background-color: #ffffff !important;
 }
 
 @media (max-width: 768px) {
-  .elderly-mode {
-    font-size: 1.1rem;
-  }
-  .elderly-mode h1 { font-size: 2.2rem !important; }
-  .elderly-mode h2 { font-size: 1.8rem !important; }
-  .elderly-mode h3 { font-size: 1.5rem !important; }
-  .elderly-mode p { font-size: 1.2rem !important; }
+  .elderly-mode { font-size: 1.1rem; }
+  .elderly-mode h1 { font-size: 2.5rem !important; }
+  .elderly-mode p { font-size: 1.3rem !important; }
 }
