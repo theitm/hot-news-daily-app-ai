@@ -123,3 +123,44 @@ img {
   align-items: center;
   gap: 8px;
 }
+
+/* Elderly Mode Adjustments */
+.elderly-mode {
+  font-size: 1.25rem; /* Base font size increase */
+}
+
+.elderly-mode h1 { font-size: 3rem !important; }
+.elderly-mode h2 { font-size: 2.5rem !important; }
+.elderly-mode h3 { font-size: 2rem !important; }
+.elderly-mode p { font-size: 1.4rem !important; line-height: 1.8 !important; color: #ffffff !important; }
+
+.elderly-mode button, 
+.elderly-mode a,
+.elderly-mode select,
+.elderly-mode input {
+  min-height: 64px !important; /* Larger touch targets */
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  font-weight: 800 !important;
+}
+
+.elderly-mode .glass {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.elderly-mode .card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: #6366f1 !important;
+  border-width: 3px !important;
+}
+
+@media (max-width: 768px) {
+  .elderly-mode {
+    font-size: 1.1rem;
+  }
+  .elderly-mode h1 { font-size: 2.2rem !important; }
+  .elderly-mode h2 { font-size: 1.8rem !important; }
+  .elderly-mode h3 { font-size: 1.5rem !important; }
+  .elderly-mode p { font-size: 1.2rem !important; }
+}

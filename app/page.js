@@ -22,6 +22,7 @@ export default function Home() {
   const [isBatchPlaying, setIsBatchPlaying] = useState(false);
   const [isBatchSummaryOpen, setIsBatchSummaryOpen] = useState(false);
   const [batchAudioUrl, setBatchAudioUrl] = useState(null);
+  const [isElderlyMode, setIsElderlyMode] = useState(false);
   const audioRef = useRef(null);
   
   // Paging states
@@ -44,6 +45,9 @@ export default function Home() {
       if (config.pageSize) {
         setPageSize(config.pageSize);
         setVisibleCount(config.pageSize);
+      }
+      if (config.elderlyMode !== undefined) {
+        setIsElderlyMode(config.elderlyMode);
       }
     }
 
@@ -267,7 +271,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen pb-20 selection:bg-indigo-500/30">
+    <main className={`min-h-screen pb-20 selection:bg-indigo-500/30 ${isElderlyMode ? 'elderly-mode' : ''}`}>
       {/* Decorative background elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 blur-[120px]" />
@@ -511,7 +515,16 @@ export default function Home() {
           <SettingsModal 
             key="settings-modal"
             isOpen={isSettingsOpen} 
-            onClose={() => setIsSettingsOpen(false)} 
+            onClose={() => {
+              setIsSettingsOpen(false);
+              // Refresh config after close
+              const savedConfig = localStorage.getItem('ai-news-config-v2');
+              if (savedConfig) {
+                const config = JSON.parse(savedConfig);
+                if (config.pageSize) setPageSize(config.pageSize);
+                if (config.elderlyMode !== undefined) setIsElderlyMode(config.elderlyMode);
+              }
+            }} 
           />
         )}
         

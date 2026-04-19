@@ -8,7 +8,8 @@ export default function SettingsModal({ isOpen, onClose }) {
     apiUrl: 'https://platform.beeknoee.com/api/v1/chat/completions',
     apiKeys: [''],
     models: ['qwen-3-235b-a22b-instruct-2507'],
-    pageSize: 12
+    pageSize: 12,
+    elderlyMode: false
   });
   const [saved, setSaved] = useState(false);
 
@@ -198,6 +199,25 @@ export default function SettingsModal({ isOpen, onClose }) {
                 <option value={20}>20 tin bài</option>
                 <option value={40}>40 tin bài</option>
               </select>
+            </div>
+
+            {/* Elderly Mode Toggle */}
+            <div className="p-6 rounded-[2rem] bg-indigo-500/5 border border-indigo-500/10 flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className={`p-3 rounded-2xl transition-all ${config.elderlyMode ? 'bg-indigo-600 text-white' : 'bg-white/5 text-slate-500'}`}>
+                  <LayoutGrid size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-base">Chế độ Người lớn tuổi</h3>
+                  <p className="text-slate-500 text-xs mt-1">Chữ to hơn, tương phản cao, dễ đọc</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setConfig({ ...config, elderlyMode: !config.elderlyMode })}
+                className={`relative w-14 h-8 rounded-full transition-all duration-300 ${config.elderlyMode ? 'bg-indigo-600' : 'bg-white/10'}`}
+              >
+                <div className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-lg transition-all duration-300 ${config.elderlyMode ? 'translate-x-6' : 'translate-x-0'}`} />
+              </button>
             </div>
 
             <button
