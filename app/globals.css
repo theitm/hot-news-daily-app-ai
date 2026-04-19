@@ -195,16 +195,19 @@ img {
   font-weight: 800 !important;
 }
 
-.elderly-mode .bg-white\/5,
-.elderly-mode .bg-white\/10 {
-  background-color: #efede7 !important;
-  border-color: #d1cfc9 !important;
+/* Simplified background overrides for high compatibility */
+.elderly-mode div,
+.elderly-mode section,
+.elderly-mode aside,
+.elderly-mode main {
+  background-color: transparent !important;
 }
 
+.elderly-mode,
+.elderly-mode body,
+.elderly-mode main,
 .elderly-mode .bg-black,
-.elderly-mode .bg-black\/95,
-.elderly-mode .bg-\[\#0a0a0b\],
-.elderly-mode .bg-\[\#0f0f11\] {
+.elderly-mode .bg-black\/95 {
   background-color: #f7f3eb !important;
 }
 
