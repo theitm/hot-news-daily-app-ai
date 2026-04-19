@@ -224,16 +224,6 @@ export default function ArticleModal({ article, onClose, initialSummary, onSumma
             </div>
           </div>
         </div>
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center text-white text-2xl font-black shadow-lg">
-                {article.sourceName.charAt(0)}
-              </div>
-              <div>
-                <p className="text-white text-xl font-black tracking-tight">{article.sourceName}</p>
-                <p className="text-slate-500 font-medium">Nguồn tin đã được xác thực</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Audio Engine */}
         {audioUrl && (
