@@ -639,9 +639,16 @@ export default function Home() {
                   </button>
                   <button 
                     onClick={() => setIsBatchSummaryOpen(false)}
+                    className="p-3 rounded-xl md:rounded-2xl bg-white/5 text-slate-400 hover:bg-white/10 transition-all border border-white/10"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+              </div>
+
               {/* Grid Content */}
-              <div className="flex-grow overflow-y-auto p-10 custom-scrollbar">
-                <div className="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
+              <div className="flex-grow overflow-y-auto p-4 md:p-10 custom-scrollbar">
+                <div className="grid grid-cols-1 gap-8 md:gap-12 max-w-4xl mx-auto pb-20 md:pb-0">
                   {articles.filter(a => selectedIds.includes(a.id)).map((article, index) => (
                     <div key={article.id || article.link || `magazine-${index}`} className="relative group">
                       <div className="flex flex-col gap-6">
